@@ -28,7 +28,10 @@ public class Main {
             System.out.println(griffindors[i]);
         }
 
-        System.out.println(griffindors[2].compare(puffenduys[0]));
+        System.out.println(griffindors[2].compare(griffindors[0]));
+        System.out.println(slizerins[0].compare(slizerins[1]));
+        System.out.println(puffenduys[1].compare(puffenduys[2]));
+        System.out.println(kogtevrans[0].compare(kogtevrans[2]));
     }
 
 }
