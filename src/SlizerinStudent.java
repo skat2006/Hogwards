@@ -1,10 +1,10 @@
-public class Slizerin extends Hogwarts {
+public class SlizerinStudent extends Hogwarts {
     private int cunning;
     private int decisiveness;
     private int ambition;
     private int resourcefulness;
 
-    public Slizerin(String name, int magicPower, int transgression, int cunning, int decisiveness, int ambition, int resourcefulness) {
+    public SlizerinStudent(String name, int magicPower, int transgression, int cunning, int decisiveness, int ambition, int resourcefulness) {
         super(name, magicPower, transgression);
         this.cunning = cunning;
         this.decisiveness = decisiveness;
@@ -45,20 +45,16 @@ public class Slizerin extends Hogwarts {
     }
 
     public int countPoints() {
-        return getMagicPower() + getTransgression() + getAmbition() + getCunning() + getDecisiveness() + getResourcefulness();
+        return super.countPoints() + getAmbition() + getCunning() + getDecisiveness() + getResourcefulness();
     }
 
-    public String compare(Object object) {
-        if (object instanceof Slizerin) {
-            if (this.countPoints() > ((Slizerin) object).countPoints()) {
-                return this.getName() + " лучший Слизеринец, чем " + ((Slizerin) object).getName();
-            } else if (this.countPoints() == ((Slizerin) object).countPoints()) {
-                return "Ученики " + this.getName() + " и " + ((Slizerin) object).getName() + " равны по силе!";
+    public String compare(SlizerinStudent student) {
+            if (this.countPoints() > student.countPoints()) {
+                return this.getName() + " лучший Слизеринец, чем " + student.getName();
+            } else if (this.countPoints() == student.countPoints()) {
+                return "Ученики " + this.getName() + " и " + student.getName() + " равны по силе!";
             } else {
-                return ((Slizerin) object).getName() + " лучший Слизеринец, чем " + this.getName();
+                return student.getName() + " лучший Слизеринец, чем " + this.getName();
             }
-        } else {
-            return "Ученики с разных факультетов!";
-        }
     }
 }
